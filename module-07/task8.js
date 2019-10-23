@@ -25,16 +25,16 @@ let height = 30;
 render.addEventListener('click', () => {
   console.log(input.value);
   if (controls.textContent !== ''){
-  for(let i = 0; i < Number(input.value); i +=1) {
-   createBoxes(); }}
-}); 
-
-destroy.addEventListener('click', () => {
-  destroyBoxes();
-});
-
-
-function createBoxes() {
+    createBoxes(); }
+  }); 
+  
+  destroy.addEventListener('click', () => {
+    destroyBoxes();
+  });
+  
+  
+  function createBoxes(amount) {
+    for(let i = 0; i <= amount; i +=1) {
 
   let r = Math.round(Math.random()*255);
   let g = Math.round(Math.random()*255);
@@ -48,7 +48,9 @@ function createBoxes() {
   width+=10;
   height+=10;
   boxes.append(div);
+  
 }
+  }
 
 function destroyBoxes() {
   console.dir(boxes);
