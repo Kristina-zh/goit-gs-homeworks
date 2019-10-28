@@ -13,7 +13,6 @@
 
 const controls = document.querySelector('#controls');
 const input = document.querySelector('input');
-console.log(input);
 const render = document.querySelector('[data-action ="render"]');
 const destroy = document.querySelector('[data-action ="destroy"]');
 
@@ -25,20 +24,19 @@ let height = 30;
 render.addEventListener('click', () => {
   console.log(input.value);
   if (controls.textContent !== ''){
-    createBoxes(); }
+    createBoxes(input.value); }
   }); 
   
   destroy.addEventListener('click', () => {
     destroyBoxes();
   });
   
-  
   function createBoxes(amount) {
-    for(let i = 0; i <= amount; i +=1) {
+    for(let i = 1; i <= amount; i +=1 ) {
 
-  let r = Math.round(Math.random()*255);
-  let g = Math.round(Math.random()*255);
-  let b = Math.round(Math.random()*255);
+  let r = Math.floor(Math.random()*256);
+  let g = Math.floor(Math.random()*256);
+  let b = Math.floor(Math.random()*256);
 
   const div = document.createElement('div');
   div.style.width = `${width}px`;

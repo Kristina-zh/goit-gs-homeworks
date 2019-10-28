@@ -8,14 +8,14 @@
 
 const counterValue = document.querySelector('#value');
 
-counterValue.textContent = 0;
-
+let value = 10;
+counterValue.textContent = value
 
 const decr = document.querySelector('[data-action="decrement"]')
-decr.addEventListener('click', () => counterValue.textContent = +counterValue.textContent - 1);
+decr.addEventListener('click', () => counterValue.textContent = value -= 1);
 
 const incr = document.querySelector('[data-action="increment"]')
-incr.addEventListener('click', () => counterValue.textContent = +counterValue.textContent + 1);
+incr.addEventListener('click', () => counterValue.textContent = value += 1);
 
 
 
